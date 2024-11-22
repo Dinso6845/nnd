@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มข้อมูลมิเตอร์ไฟฟ้า</title>
+    <!-- เชื่อมโยงไฟล์ CSS -->
+    <link rel="stylesheet" href="data.css">
+    <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="data.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>เพิ่มข้อมูลมิเตอร์ไฟฟ้า</h1>
+        <form id="dataForm" action="/Electricity/backend/data.php" method="POST">
+            <div id="inputContainer">
+                <div class="inputRow">
+                    <input type="text" name="em_roomNo[]" placeholder="Room Number" required>
+                    <input type="text" name="em_meterID[]" placeholder="Meter Serial Number" required>
+                </div>
+            </div>
+            <button type="button" id="addRow">เพิ่มข้อมูลอีก</button>
+            <button type="submit" id="saveBtn">บันทึกข้อมูล</button>
+            <button type="button" id="manage" style="background-color: #d6b600; color: rgb(255, 255, 255);">จัดการข้อมูล</button>
+        </form>
+    </div>
+
+    <!-- ป๊อปอัพยืนยันการบันทึก -->
+    <div id="popup" style="display:none;">
+        <div class="popup-content">
+            <h3>คุณต้องการบันทึกข้อมูลนี้หรือไม่?</h3>
+            <button class="confirm" id="confirmBtn">ยืนยัน</button>
+            <button class="cancel" id="cancelBtn">ยกเลิก</button>
+        </div>
+    </div>
+</body>
+</html>
